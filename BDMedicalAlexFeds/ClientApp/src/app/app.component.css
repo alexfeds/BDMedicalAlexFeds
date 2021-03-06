@@ -1,0 +1,15 @@
+.bd-table-wrapper {
+  margin: 9%;
+}
+
+.table-header.bd-input-wrapper {
+  display: inline-block;
+  padding-right: 2.3em;
+}
+.bd-buttons-wrapper {
+  display: inline;
+}
+
+button.p-button-raised.p-button.p-component {
+  margin-right: 2em;
+}
