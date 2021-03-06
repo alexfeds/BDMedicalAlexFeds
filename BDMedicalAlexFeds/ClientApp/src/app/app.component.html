@@ -1,0 +1,56 @@
+
+
+
+<div class="bd-table-wrapper">
+  <p-card>
+
+    <p-table>
+
+      <ng-template pTemplate="caption">
+
+        <div class="table-header bd-input-wrapper">
+          Number of batches
+       
+            <input [(ngModel)]="numBatchInput" pInputText type="text" placeholder="Global Search" />
+         
+        </div>
+
+        <div class="table-header bd-input-wrapper">
+          Number per batch
+      
+            <input  [(ngModel)]="numPerBatchInput" pInputText type="text" placeholder="Global Search" />
+       
+        </div>
+
+
+        <div class="bd-buttons-wrapper">
+
+          <button (click)="processNumbers()" pButton pRipple type="button" label="Start" class="p-button-raised"></button>
+
+          <button pButton pRipple type="button" label="Stop" class="p-button-raised"></button>
+
+
+        </div>
+      </ng-template>
+
+
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Batch number</th>
+          <th>Numbers to process</th>
+          <th>Generated numbers</th>
+          <th>Total</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-car>
+        <tr>
+          <td>{{car.vin}}</td>
+          <td>{{car.year}}</td>
+          <td>{{car.brand}}</td>
+          <td>{{car.color}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+  </p-card>
+</div>
