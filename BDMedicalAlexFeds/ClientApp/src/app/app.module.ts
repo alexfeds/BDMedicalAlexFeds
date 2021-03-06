@@ -10,8 +10,10 @@ import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+
 import { HttpClientModule } from '@angular/common/http';
 import { APP_BASE_HREF } from '@angular/common';
+
 
 
 @NgModule({
@@ -25,10 +27,16 @@ import { APP_BASE_HREF } from '@angular/common';
     InputTextModule,
     ButtonModule,
     CardModule,
+
     FormsModule,
     HttpClientModule
   ],
   providers: [HttpClientModule, { provide: APP_BASE_HREF, useValue: "http://localhost:4500/MyApp" }],
+
+    FormsModule
+  ],
+  providers: [],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

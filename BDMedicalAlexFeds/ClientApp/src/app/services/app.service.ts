@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Observable } from "rxjs";
+
 import { environment } from '../../environments/environment';
 import { LocationStrategy, Location } from '@angular/common';
+
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +21,12 @@ export class AppService {
 
     let apiUrl = baseUrl + 'message';  
     return this.http.get<any>(apiUrl);
+
+  constructor(private http: HttpClient) { }
+
+  startNumberProces(numOfBatches: number, numberPerBatch: number) {
+    return this.http.post<any>('api/correspondents/groups', numberPerBatch);
+
   }
 
 }

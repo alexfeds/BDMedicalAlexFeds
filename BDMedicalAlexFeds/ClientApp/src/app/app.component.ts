@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { AppService } from './services/app.service';
+
 
 
 
@@ -13,9 +15,14 @@ import { AppService } from './services/app.service';
 export class AppComponent implements OnInit {
 
   numBatchInput: number = 0;
+
   numMessagesInput: number = 0;
 
   constructor(private appService: AppService) { }
+
+  numPerBatchInput: number = 0;
+
+  constructor() { }
 
 
   ngOnInit() {
@@ -26,10 +33,14 @@ export class AppComponent implements OnInit {
 
   processNumbers() {
       console.log("numBatchInput", this.numBatchInput),
+
         console.log("numPerBatchInput", this.numMessagesInput)
 
     this.appService.getMessages(this.numBatchInput, this.numMessagesInput).subscribe(data => {
       console.log("data", data)
     })
+
+      console.log("numPerBatchInput", this.numPerBatchInput)
+
   }
 }
